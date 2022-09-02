@@ -47,3 +47,7 @@ gcloud auth print-access-token | docker login -u oauth2accesstoken --password-st
 
 # Print gcloud access toekn and assign to env variable
 GCLOUD_ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+# List container images in artifact repository
+
+gcloud container images list-tags us-east1-docker.pkg.dev/engineering-artifacts-dev/docker/python-base-38
