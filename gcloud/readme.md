@@ -40,3 +40,10 @@ gcloud artifacts repositories list
 ### Only takes 1 value i.e. the most recent
 ### Outputs the results as {package}@{version}gclou
 gcloud artifacts docker images list us-central1-docker.pkg.dev/cloudbuild-testing-354715/my-repository/docker
+
+
+# Print gcloud access token and use for docker login
+gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://us-east1-docker.pkg.dev
+
+# Print gcloud access toekn and assign to env variable
+GCLOUD_ACCESS_TOKEN=$(gcloud auth print-access-token)
