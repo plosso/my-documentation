@@ -51,3 +51,10 @@ GCLOUD_ACCESS_TOKEN=$(gcloud auth print-access-token)
 # List container images in artifact repository
 
 gcloud container images list-tags us-east1-docker.pkg.dev/engineering-artifacts-dev/docker/python-base-38
+
+# IAP tunnel to bastion host set local port to remote cloudsql port
+gcloud beta compute ssh cloudsql-bastion-vm-1 --tunnel-through-iap --project machinelearning-research --zone us-central1-c -- -L5432:10.48.80.5:5432
+
+# Tag an existing container
+gcloud container images add-tag gcr.io/myproject/myimage:mytag1 \
+gcr.io/myproject/myimage:mytag2
