@@ -58,3 +58,14 @@ gcloud beta compute ssh cloudsql-bastion-vm-1 --tunnel-through-iap --project mac
 # Tag an existing container
 gcloud container images add-tag gcr.io/myproject/myimage:mytag1 \
 gcr.io/myproject/myimage:mytag2
+
+# List secrets names
+gcloud secrets list
+
+# List a secret's versions
+gcloud secrets versions list `secret-id`
+gcloud secrets versions list new-relic-license-key-stage
+
+# Access a secret version
+gcloud secrets versions access `version-id` --secret="`secret-id`"
+gcloud secrets versions access 2 --secret="new-relic-license-key-stage"
