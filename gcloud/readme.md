@@ -68,4 +68,7 @@ gcloud secrets versions list new-relic-license-key-stage
 
 # Access a secret version
 gcloud secrets versions access `version-id` --secret="`secret-id`"
-gcloud secrets versions access 2 --secret="new-relic-license-key-stage"
+
+# Impersonate a Service Account
+% export GOOGLE_OAUTH_ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account=priv-user1@iam-testing-368920.iam.gserviceaccount.com)
+
