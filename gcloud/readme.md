@@ -72,3 +72,12 @@ gcloud secrets versions access `version-id` --secret="`secret-id`"
 # Impersonate a Service Account
 % export GOOGLE_OAUTH_ACCESS_TOKEN=$(gcloud auth print-access-token --impersonate-service-account=priv-user1@iam-testing-368920.iam.gserviceaccount.com)
 
+
+# List gcloud configurations
+% gcloud config configurations list
+# Setting up gcloud configurations
+% gcloud config configurations create devops-poc
+% gcloud config set account patrick.losso@overjet.ai
+% gcloud config set project devops-poc-328820
+% gcloud config set compute/region us-central1
+% gcloud config set compute/zone us-central1-b
